@@ -4,24 +4,28 @@
 
 ## Problem
 
-### Print 108 using 9 and 12
+### Print Learn Coding on CodeChef
 
-Print the number 108 using arithmetic operations on the numbers 9 and 12.
+Print  **"Learn Coding on CodeChef"**  to the console.
 
 ## Solution
 
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-23T09:01:31.990Z  
+**Submitted:** 2026-07-23T09:02:21.683Z  
 
 ```java
-class Codechef {
-    public static void main(String[] args) {
-        System.out.println(9 * 12);
-        
-    }
+class Codechef
+{
+	public static void main (String[] args)
+	{
+	    System.out.println("Learn Coding on CodeChef");
+        // Write your code here
+      
+	}
 }
+
 ```
 
 ---
