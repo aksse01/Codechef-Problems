@@ -48,23 +48,29 @@ Output: -10
 ## Solution
 
 **Language:** Java  
-**Runtime:** 10 ms (beats 7.46%)  
-**Memory:** 46.4 MB (beats 23.53%)  
-**Submitted:** 2026-07-24T06:53:16.847Z  
+**Runtime:** 3 ms (beats 80.23%)  
+**Memory:** 45.7 MB (beats 39.80%)  
+**Submitted:** 2026-07-24T06:53:43.061Z  
 
 ```java
 class Solution {
-    public int minimumTotal(List<List<Integer>> tri) {
-        for (int i = tri.size() - 2; i >= 0; i--)
-            for (int j = 0; j < tri.get(i).size(); j++)
-                tri.get(i).set(j, tri.get(i).get(j) + Math.min(
-                    tri.get(i + 1).get(j),
-                    tri.get(i + 1).get(j + 1)
-                ));
-        return tri.get(0).get(0);
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int row = triangle.size();
+        int[] memo = new int[row];
+
+        for (int i = 0; i < row; i++) {
+            memo[i] = triangle.get(row - 1).get(i);
+        }
+
+        for (int r = row-2; r >= 0; r--) {
+            for (int c = 0; c <= r; c++) {
+                memo[c] = Math.min(memo[c], memo[c+1]) + triangle.get(r).get(c);
+            }
+        }
+
+        return memo[0];        
     }
 }
-
 ```
 
 ---
